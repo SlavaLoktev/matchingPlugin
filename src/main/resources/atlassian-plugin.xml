@@ -9,7 +9,7 @@
     <param name="plugin-logo">images/pluginLogo.png</param> 
   </plugin-info>  
   <!-- add our i18n resource -->  
-  <resource type="i18n" name="i18n" location="matchingPlugin"/>  
+  <resource type="i18n" name="i18n" location="/i18n/matchingPlugin"/>
   <!-- add our web resources -->  
   <web-resource key="matchingPlugin-resources" name="matchingPlugin Web Resources"> 
     <dependency>com.atlassian.auiplugin:ajs</dependency>  
@@ -27,7 +27,7 @@
     <label key="my-web-item.label"/>  
     <link linkId="my-web-item-link">/secure/MyWebworkAction.jspa</link>
   </web-item>  
-  <webwork1 key="my-webwork" name="My Webwork" i18n-name-key="my-webwork.name"> 
+  <webwork1 key="my-webwork" name="My Webwork" i18n-name-key="my-webwork.name" roles-required="admin">
     <description key="my-webwork.description">The My Webwork Plugin</description>  
     <actions> 
       <action name="com.jira.plugin.vsu.jira.webwork.MyWebworkAction" alias="MyWebworkAction"> 

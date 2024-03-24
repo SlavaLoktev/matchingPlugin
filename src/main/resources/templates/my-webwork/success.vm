@@ -1,1 +1,29 @@
-<h1>success.vm</h1>
+<html>
+<head>
+    <title>$i18n.getText("title.name")</title>
+    <meta name="decorator" content="atl.admin" />
+</head>
+<body>
+<form class="aui">
+    <div class="field-group">
+        <label for="parameter1">$i18n.getText("com.jira.plugin.vsu.jira.my.item.parameter1")
+            <span class="aui-icon icon-required">(required)</span></label>
+        <input class="text medium-field" type="text"
+               id="parameter1" name="parameter1" placeholder=$i18n.getText("com.jira.plugin.vsu.jira.my.item.parameter1")>
+        <div class="description">$i18n.getText("com.jira.plugin.vsu.jira.my.item.parameter1")</div>
+    </div>
+    <div class="field-group">
+        <label for="parameter2">$i18n.getText("com.jira.plugin.vsu.jira.my.item.parameter2")
+            <span class="aui-icon icon-required">(required)</span></label>
+        <input class="text medium-field" type="text"
+               id="parameter2" name="parameter2" placeholder="parameter2">
+        <div class="description">This is value for parameter2</div>
+    </div>
+    <div class="buttons-container">
+        <div class="buttons">
+            <input class="button submit" type="submit" value=$i18n.getText("com.jira.plugin.vsu.jira.frontend.button.save") id="comment-save-button">
+        </div>
+    </div>
+</form>
+</body>
+</html>
