@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<atlassian-plugin key="${atlassian.plugin.key}" name="${project.name}" plugins-version="2"> 
+  <plugin-info> 
+    <description>${project.description}</description>  
+    <version>${project.version}</version>  
+    <vendor name="${project.organization.name}" url="${project.organization.url}"/>  
+    <param name="plugin-icon">images/pluginIcon.png</param>  
+    <param name="plugin-logo">images/pluginLogo.png</param> 
+  </plugin-info>  
+  <!-- add our i18n resource -->  
+  <resource type="i18n" name="i18n" location="matchingPlugin"/>  
+  <!-- add our web resources -->  
+  <web-resource key="matchingPlugin-resources" name="matchingPlugin Web Resources"> 
+    <dependency>com.atlassian.auiplugin:ajs</dependency>  
+    <resource type="download" name="matchingPlugin.css" location="/css/matchingPlugin.css"/>  
+    <resource type="download" name="matchingPlugin.js" location="/js/matchingPlugin.js"/>  
+    <resource type="download" name="images/" location="/images"/>  
+    <context>matchingPlugin</context> 
+  </web-resource>  
+  <web-section name="My Section" i18n-name-key="my-section.name" key="my-section" location="admin_plugins_menu" weight="1000"> 
+    <description key="my-section.description">The My Section Plugin</description>  
+    <label key="my-section.label"/> 
+  </web-section>  
+  <web-item name="My Web Item" i18n-name-key="my-web-item.name" key="my-web-item" section="admin_plugins_menu/my-section" weight="1000"> 
+    <description key="my-web-item.description">The My Web Item Plugin</description>  
+    <label key="my-web-item.label"/>  
+    <link linkId="my-web-item-link">/secure/MyWebworkAction.jspa</link>
+  </web-item>  
+  <webwork1 key="my-webwork" name="My Webwork" i18n-name-key="my-webwork.name"> 
+    <description key="my-webwork.description">The My Webwork Plugin</description>  
+    <actions> 
+      <action name="com.jira.plugin.vsu.jira.webwork.MyWebworkAction" alias="MyWebworkAction"> 
+        <view name="success">/templates/my-webwork/success.vm</view>  
+        <view name="input">/templates/my-webwork/input.vm</view>  
+        <view name="error">/templates/my-webwork/error.vm</view> 
+      </action> 
+    </actions> 
+  </webwork1>
+</atlassian-plugin>
