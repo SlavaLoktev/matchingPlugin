@@ -4,7 +4,7 @@
     <meta name="decorator" content="atl.admin" />
 </head>
 <body>
-<form class="aui">
+<form class="aui" method="POST">
     <div class="field-group">
         <label for="parameter1">$i18n.getText("com.jira.plugin.vsu.jira.my.item.parameter1")
             <span class="aui-icon icon-required">(required)</span></label>
@@ -16,7 +16,7 @@
         <label for="parameter2">$i18n.getText("com.jira.plugin.vsu.jira.my.item.parameter2")
             <span class="aui-icon icon-required">(required)</span></label>
         <input class="text medium-field" type="text"
-               id="parameter2" name="parameter2" placeholder="parameter2">
+               id="parameter2" name="parameter2" placeholder="parameter2" value="{}">
         <div class="description">This is value for parameter2</div>
     </div>
     <div class="buttons-container">
